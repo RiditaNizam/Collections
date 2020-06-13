@@ -24,7 +24,7 @@ class CollectionsTests {
 	// Question 2
 	@Test
 	void test_EliminatesDuplicates() {
-		Set<String> hashSet = new HashSet<String>();
+		Set<String> hashSet = new HashSet<>();
 		hashSet.add("Ridita");
 		hashSet.add("Adam");
 		hashSet.add("Bob");
@@ -57,30 +57,35 @@ class CollectionsTests {
 	// Question 4
 	@Test
 	void test_occurencesFromMap() {
-		// Arrange
 		String helloThere = "HELLO THERE";
 		char[] charArray = helloThere.toCharArray();
 		Map<Character, Integer> hashMap = new HashMap<>();
 		for (int i = 0; i < charArray.length; i++) {
+			// If the map already has the letter
 			if (hashMap.containsKey(charArray[i])) {
+				// Add 1 to the value
 				hashMap.put(charArray[i], hashMap.get(charArray[i]) + 1);
 			} else {
 				hashMap.put(charArray[i], 1);
 			}
 		}
 		// Assert
+		// H has a value of 2
 		assertEquals(2, hashMap.get('H'));
 	}
 
 	// Question 5
-//	@Test
-//	void test_CountDuplicates() {
-//		Map<String, Integer> myMap = new HashMap<>();
-//		String str = "The error in this sentence is repeating cow cow.";
-//		String lowerCaseVersion = str.toLowerCase();
-//		for(int i = 0; i < str.length(); i++) {
-//			if(myMap.containsKey(key))
-//		}
-//	}
+	@Test
+	void test_CountDuplicates() {
+		String str = "Ridita Ridita Nizam Nizam";
+		str = str.toLowerCase();
+		String[] words = str.split(" ");
+		Set<String> duplicates = new HashSet<>();
+		for (String word : words) {
+			duplicates.add(word);
+		}
+		// Assert
+		assertTrue(duplicates.size() == 2);
+	}
 
 }
