@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
@@ -112,8 +113,16 @@ class CollectionsTests {
 	}
 
 	// Question 8
-//	@Test
-//	void test_PriorityQueue() {
-//		
-//	}
+	@Test
+	void test_PriorityQueue() {
+		PriorityQueue<Double> priorityQueue = new PriorityQueue<>();
+		double testSum = 0.0;
+		priorityQueue.add(14.8);
+		priorityQueue.add(2.2);
+		priorityQueue.add(6.5);
+		for (double element : priorityQueue) {
+			testSum += element;
+		}
+		assertEquals(23.5, testSum);
+	}
 }
