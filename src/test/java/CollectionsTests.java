@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -70,7 +71,6 @@ class CollectionsTests {
 			}
 		}
 		// Assert
-		// H has a value of 2
 		assertEquals(2, hashMap.get('H'));
 	}
 
@@ -88,4 +88,32 @@ class CollectionsTests {
 		assertTrue(duplicates.size() == 2);
 	}
 
+	// Question 6
+//	@Test
+//	void test_ReverseLinkedList() {
+//		LinkedList<Integer> originalList = new LinkedList<>();
+//		for (int i = 1; i < 5; i++) {
+//			originalList.add(i);
+//		}
+//		LinkedList<Integer> secondList = new LinkedList<>();
+//		secondList = (LinkedList) originalList.clone();
+//	}
+
+	// Question 7
+	@Test
+	void test_TreeSet() {
+		Set<String> treeSet = new TreeSet<>();
+		treeSet.add("Amanda");
+		treeSet.add("Cindarella");
+		treeSet.add("Bob");
+		treeSet.add("Cindarella");
+		// Assert
+		assertTrue(treeSet.size() == 3);
+	}
+
+	// Question 8
+//	@Test
+//	void test_PriorityQueue() {
+//		
+//	}
 }
